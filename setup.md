@@ -19,3 +19,7 @@ add to globals.css and restart vscode
 @tailwind components;
 @tailwind utilities;
 ```
+
+create color theme:
+`npm i next-themes`
+`npm i react-icons`
