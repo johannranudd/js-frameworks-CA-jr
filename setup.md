@@ -19,3 +19,6 @@ add to globals.css and restart vscode
 @tailwind components;
 @tailwind utilities;
 ```
+
+<!-- potential: -->
+<!-- npm i next-themes -->
