@@ -9,7 +9,6 @@ const BtnColorMode = () => {
 
   useEffect(() => {
     setMounted(true);
-    console.log(theme);
   }, []);
 
   if (!mounted) {
@@ -19,7 +18,7 @@ const BtnColorMode = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div>
+    <div className="border border-2 border-purple-600 p-2">
       The current theme is: {theme}{" "}
       <span className="dark:text-purple-600">mode</span>
       {currentTheme === "dark" ? (
