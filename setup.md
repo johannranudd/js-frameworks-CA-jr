@@ -22,3 +22,4 @@ add to globals.css and restart vscode
 
 <!-- potential: -->
 <!-- npm i next-themes -->
+<!-- npm i react-icons -->
