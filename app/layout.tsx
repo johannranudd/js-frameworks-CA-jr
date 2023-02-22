@@ -1,6 +1,7 @@
 import "./globals.css";
 import Head from "./head";
 import ColorThemeProvider from "../context/colorThemeProvider";
+import { GlobalContextProvider } from "../context/cart";
 
 export default function RootLayout({
   children,
@@ -11,7 +12,9 @@ export default function RootLayout({
     <html lang="en">
       <Head />
       <body>
-        <ColorThemeProvider>{children}</ColorThemeProvider>
+        <GlobalContextProvider>
+          <ColorThemeProvider>{children}</ColorThemeProvider>
+        </GlobalContextProvider>
       </body>
     </html>
   );
