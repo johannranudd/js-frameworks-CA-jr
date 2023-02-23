@@ -1,27 +1,23 @@
 "use client";
 import React from "react";
+import { useProductContext } from "../../context/productProvider";
 
 export default function Page() {
-  function handleSubmit(e: any) {
-    e.preventDefault();
-    console.log("sub");
-  }
+  const { products } = useProductContext();
+
   return (
     <div>
-      <h1>Add Products:</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col my-4">
-        <label htmlFor="product-name">Product name</label>
-        <input
-          type="text"
-          //   onChange={}
-          name="product-name"
-          id="product-name"
-          className="border"
-        />
-        <label htmlFor="price">Price</label>
-        <input type="text" name="price" id="price" className="border" />
-        <button type="submit">Submit</button>
-      </form>
+      <h1>List of Products from context:</h1>
+      <ul className="border border-2 border-pink-700 p-2">
+        {products.map((product) => {
+          const { id, name, price } = product;
+          return (
+            <li key={id}>
+              {name} ----- {price}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

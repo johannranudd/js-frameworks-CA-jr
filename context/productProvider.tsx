@@ -1,9 +1,5 @@
 "use client";
-// import { Product } from "../interfaces/products";
 import React, { ReactNode, useState, createContext, useContext } from "react";
-// import { ProductContext } from "./productContext";
-// import { Product } from "../interfaces/products";
-// import { createContext, useContext } from "react";
 
 interface Product {
   id?: number;

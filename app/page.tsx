@@ -1,7 +1,7 @@
 "use client";
 import BtnColorMode from "../components/ui/btnColorMode";
 import { useProductContext } from "@/context/productProvider";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function Home() {
   const { products, addProduct } = useProductContext();
@@ -18,15 +18,18 @@ export default function Home() {
     const id: number = Date.now();
     // console.log(id);
     const prodObj = {
-      id: id,
       name: productName ? productName : "",
       price: price,
     };
-    console.log(prodObj);
+    // console.log(prodObj);
     // if (productName, )
     addProduct(prodObj);
-    console.log("products::::", products);
+    // console.log("products::::", products);
   }
+
+  useEffect(() => {
+    console.log(products);
+  }, [products]);
 
   return (
     <main>
@@ -52,7 +55,16 @@ export default function Home() {
         />
         <button type="submit">submit</button>
       </form>
-      <ul className="border border-2 border-pink-700 p-2"></ul>
+      <ul className="border border-2 border-pink-700 p-2">
+        {products.map((product) => {
+          const { id, name, price } = product;
+          return (
+            <li key={id}>
+              {name} ----- {price}
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 }
