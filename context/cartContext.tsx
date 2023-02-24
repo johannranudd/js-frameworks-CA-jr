@@ -10,13 +10,13 @@ interface Product {
 interface CartContextInterface {
   products: Product[];
   addProduct: (product: Product) => void;
-  removeProduct: (product: Product) => void;
+  removeProduct: (products: Product[]) => void;
 }
 
 export const CartContext = createContext<CartContextInterface>({
   products: [],
   addProduct(product) {},
-  removeProduct(product) {},
+  removeProduct(products) {},
 });
 
 interface IProps {
@@ -29,8 +29,10 @@ export function CartProvider({ children }: IProps) {
     product.id = Number(Date.now());
     setProducts([...products, product]);
   };
-  const removeProduct = (product: Product) => {
-    console.log("this product was removed:::", product);
+  const removeProduct = (products: Product[]) => {
+    // console.log(products);
+    setProducts(products);
+    console.log("the new product list is:", products);
   };
   return (
     <CartContext.Provider value={{ products, addProduct, removeProduct }}>
