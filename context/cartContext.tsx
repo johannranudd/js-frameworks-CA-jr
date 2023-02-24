@@ -6,34 +6,31 @@ import React, {
   useContext,
   Dispatch,
   SetStateAction,
+  useReducer,
 } from "react";
+import { reducer, initialState } from "./reducer/cartReducer";
 
-interface Product {
-  id?: number;
-  productName: string;
+type TProduct = {
+  id: string;
+  name: string;
   price: number;
-}
+};
 
-interface IPost {
-  id: number;
-  title: string;
-  body: string;
-}
+// type CartState = {
+//   products: TProduct[];
+// };
 
 interface CartContextInterface {
-  products: Product[];
-  addProduct: (product: Product) => void;
-  removeProduct: (products: Product[]) => void;
-  posts: IPost[];
-  setPosts: Dispatch<SetStateAction<IPost[]>>;
+  //   products: TProduct[];
+  state: Object;
+  dispatch: Dispatch<any>;
+  //   setProducts: Dispatch<SetStateAction<TProduct[]>>;
 }
 
 export const CartContext = createContext<CartContextInterface>({
-  products: [],
-  addProduct(product) {},
-  removeProduct(products) {},
-  posts: [],
-  setPosts: (): IPost[] => [],
+  //   products: [],
+  state: {},
+  dispatch: (): TProduct[] => [],
 });
 
 interface IProps {
@@ -41,22 +38,11 @@ interface IProps {
 }
 
 export function CartProvider({ children }: IProps) {
-  // !test
-  const [posts, setPosts] = useState<[] | IPost[]>([]);
-  // !test
-  const [products, setProducts] = useState<Product[]>([]);
-  const addProduct = (product: Product) => {
-    product.id = Number(Date.now());
-    setProducts([...products, product]);
-  };
-  const removeProduct = (products: Product[]) => {
-    setProducts(products);
-    console.log("the new product list is:", products);
-  };
+  const [state, dispatch] = useReducer(reducer, initialState);
+  //   const cartContextValue = { state, dispatch };
+
   return (
-    <CartContext.Provider
-      value={{ products, addProduct, removeProduct, posts, setPosts }}
-    >
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
     </CartContext.Provider>
   );
