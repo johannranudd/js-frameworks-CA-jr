@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { useCartContext } from "@/context/cartContext";
+import { useCartContext } from "../../context/cartContext";
 
 export default function ListComponent() {
   const { state, dispatch } = useCartContext();
