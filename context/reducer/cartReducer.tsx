@@ -1,25 +1,24 @@
 import React from "react";
+import { TProduct } from "../cartContext";
 
-interface TState {
-  products: Object[];
+interface IState {
+  products: TProduct[];
 }
 
-export const initialState: TState = {
+export const initialState: IState = {
   products: [],
 };
 
 // { id: "IDstring", name: "Namestring", price: 123234213 }
 
-export function reducer(state: TState, action: any) {
+export function reducer(state: IState, action: any) {
   switch (action.type) {
     case "ADD":
-      console.log("action.payload:::", action.payload);
-      console.log("state.products:::", state.products);
-      const newProductArray = [...state.products, action.payload];
-      console.log(newProductArray);
+      //   console.log("action.payload:::", action.payload);
+      //   console.log("state.products:::", state.products);
       return {
         ...state,
-        products: newProductArray,
+        products: [...state.products, action.payload],
       };
     case "CHANGE":
     case "DELETE":
