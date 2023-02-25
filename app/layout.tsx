@@ -16,7 +16,7 @@ export default function RootLayout({
         <CartProvider>
           <ColorThemeProvider>
             <header className="border border-2 border-pink-400 space-x-3">
-              <Link href={"/"}>Home</Link>
+              <Link href={"./"}>Home</Link>
               <Link href={"./products"}>Products</Link>
             </header>
             {children}
