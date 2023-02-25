@@ -10,25 +10,18 @@ import React, {
 } from "react";
 import { reducer, initialState } from "./reducer/cartReducer";
 
-type TProduct = {
+export type TProduct = {
   id: string;
   name: string;
   price: number;
 };
 
-// type CartState = {
-//   products: TProduct[];
-// };
-
 interface CartContextInterface {
-  //   products: TProduct[];
   state: Object;
   dispatch: Dispatch<any>;
-  //   setProducts: Dispatch<SetStateAction<TProduct[]>>;
 }
 
 export const CartContext = createContext<CartContextInterface>({
-  //   products: [],
   state: {},
   dispatch: (): TProduct[] => [],
 });
@@ -39,7 +32,6 @@ interface IProps {
 
 export function CartProvider({ children }: IProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //   const cartContextValue = { state, dispatch };
 
   return (
     <CartContext.Provider value={{ state, dispatch }}>

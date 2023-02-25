@@ -4,10 +4,10 @@ import { useCartContext } from "@/context/cartContext";
 
 export default function ListComponent() {
   const { state, dispatch } = useCartContext();
+  const { products }: any = state;
 
-  // console.log(state);
   useEffect(() => {
-    console.log("THIS IS STATE IN LIST COMPONENT::: ", state);
+    console.log(products);
   }, [state]);
   return (
     <div>
@@ -16,7 +16,11 @@ export default function ListComponent() {
         onClick={() =>
           dispatch({
             type: "ADD",
-            payload: { id: "IDstring", name: "Namestring", price: 123234213 },
+            payload: {
+              id: crypto.randomUUID(),
+              name: "Namestring",
+              price: Math.floor(Math.random() * 100),
+            },
           })
         }
       >
