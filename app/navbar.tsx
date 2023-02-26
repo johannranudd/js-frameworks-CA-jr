@@ -10,6 +10,7 @@ export default function NavBar() {
         <Link href={"/products/134234"}>Products/134234</Link>
         <Link href={"/cart"}>Cart</Link>
         <Link href={"/checkout"}>Checkout</Link>
+        <Link href={"/search"}>search</Link>
       </nav>
     </header>
   );

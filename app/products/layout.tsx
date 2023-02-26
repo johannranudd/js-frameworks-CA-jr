@@ -1,13 +1,16 @@
-import ProductDetailPage from "./[productId]/page";
+import List from "./List";
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <main className="bg-gray-500">
-      <div>Im a layout</div>
-      <div>{children}</div>
-    </main>
+    <div className="bg-gray-500 ">
+      <h1>Im a product layout</h1>
+      <div className="flex">
+        <List />
+        <div className="w-full">{children}</div>
+      </div>
+    </div>
   );
 }
