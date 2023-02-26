@@ -1,9 +1,10 @@
-import NumberComponent from "@/components/ui/numberComponent";
-export default async function ProductDetailPage() {
-  return (
-    <div>
-      ProductDetailPage
-      <NumberComponent />
-    </div>
-  );
+import React from "react";
+// import { numberFunction } from "@/app/components/ui/numberFunction";
+import { useCartContext } from "@/context/cartContext";
+async function ProductDetailPage() {
+  //   const { testingFFS } = useCartContext();
+  //   console.log(testingFFS);
+  return <div>ProductDetailPage</div>;
 }
+
+export default ProductDetailPage;

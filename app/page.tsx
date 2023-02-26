@@ -1,5 +1,5 @@
-import BtnColorMode from "../components/ui/btnColorMode";
-import ListComponent from "../components/lists/listComponent";
+import BtnColorMode from "./components/ui/btnColorMode";
+import ListComponent from "./components/lists/listComponent";
 
 export default function Home() {
   return (

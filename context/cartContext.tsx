@@ -9,6 +9,7 @@ import React, {
   useReducer,
 } from "react";
 import { reducer, initialState } from "./reducer/cartReducer";
+import { numberFunction } from "@/app/components/ui/numberFunction";
 
 export type TProduct = {
   id: string;
@@ -19,11 +20,13 @@ export type TProduct = {
 interface CartContextInterface {
   state: Object;
   dispatch: Dispatch<any>;
+  // testingFFS: string;
 }
 
 export const CartContext = createContext<CartContextInterface>({
   state: {},
   dispatch: (): TProduct[] => [],
+  // testingFFS: "",
 });
 
 interface IProps {
@@ -32,7 +35,7 @@ interface IProps {
 
 export function CartProvider({ children }: IProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  // const testingFFS = numberFunction();
   return (
     <CartContext.Provider value={{ state, dispatch }}>
       {children}
