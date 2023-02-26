@@ -3,12 +3,23 @@ import React from "react";
 // import { useCartContext } from "@/context/cartContext";
 interface IParams {
   params: {
-    productsId: string;
+    productId: string;
     searchParams: {};
   };
 }
-export default async function ProductDetailPage(props: IParams) {
+export default async function ProductDetailPage({
+  params: { productId },
+}: IParams) {
   // console.log(props);
+  // console.log(params);
+  console.log(productId);
   // fetch with productId to get detailed product
-  return <div>ProductDetailPage</div>;
+  return (
+    <div>
+      <h1>ProductDetailPage</h1>
+      <p>
+        displaying product: <strong>{productId}</strong>
+      </p>
+    </div>
+  );
 }
