@@ -9,28 +9,14 @@ import React, {
   useReducer,
 } from "react";
 import { reducer, initialState } from "./reducer/cartReducer";
-
-export type TProduct = {
-  id: string;
-  name: string;
-  price: number;
-};
-
-interface CartContextInterface {
-  state: Object;
-  dispatch: Dispatch<any>;
-}
+import { TProduct, CartContextInterface } from "@/types/types";
 
 export const CartContext = createContext<CartContextInterface>({
   state: {},
   dispatch: (): TProduct[] => [],
 });
 
-interface IProps {
-  children: ReactNode;
-}
-
-export function CartProvider({ children }: IProps) {
+export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <CartContext.Provider value={{ state, dispatch }}>
