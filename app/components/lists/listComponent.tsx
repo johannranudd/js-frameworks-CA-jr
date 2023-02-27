@@ -1,18 +1,26 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useCartContext } from "@/context/cartContext";
+import Image from "next/image";
 
-// interface IData {
-//   id: string;
-//   title: string;
-//   price: number;
-//   description;
-//   discountedPrice;
-//   imageUrl;
-//   rating;
-//   reviews;
-//   tags;
-// }
+interface Ireview {
+  id: string;
+  username: string;
+  rating: number;
+  description: string;
+}
+
+interface IData {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  discountedPrice: number;
+  imageUrl: string;
+  rating: number;
+  reviews: Array<Ireview>;
+  tags: Array<string>;
+}
 
 export default function ListComponent() {
   const [data, setData] = useState<Array<IData>>([]);
@@ -32,15 +40,15 @@ export default function ListComponent() {
   }, []);
 
   useEffect(() => {
-    // console.log(products);
-  }, [state]);
+    console.log(data);
+  }, [data]);
   return (
     <div>
       <h3>List Component</h3>
-      <ul>
+      <ul className="space-y-8">
         {data &&
           data.map((item) => {
-            console.log(item);
+            // console.log(item);
             const {
               id,
               title,
@@ -55,6 +63,14 @@ export default function ListComponent() {
             return (
               <li key={id}>
                 <h3>{title}</h3>
+                <div className="w-28 h-48 relative">
+                  <Image
+                    src={imageUrl}
+                    alt="Picture of the author"
+                    fill={true}
+                    className="object-cover"
+                  />
+                </div>
               </li>
             );
           })}
