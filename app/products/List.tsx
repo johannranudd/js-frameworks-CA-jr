@@ -10,9 +10,22 @@ export default function List() {
         return (
           <li key={item}>
             <Link href={`./products/${item}`}>item: {item}</Link>
+            {/* <Link
+              href={{
+                pathname: "/products",
+                query: { id: item },
+              }}
+            >
+              item: {item}
+            </Link> */}
           </li>
         );
       })}
     </ul>
   );
 }
+
+// href={{
+//         pathname: "/about",
+//         query: { name: "TIM" }
+//       }}

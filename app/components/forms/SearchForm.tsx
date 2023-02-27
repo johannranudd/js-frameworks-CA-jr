@@ -17,9 +17,7 @@ export default function MyForm() {
     }
   }
 
-  useEffect(() => {
-    // console.log(search);
-  }, [search]);
+  useEffect(() => {}, []);
 
   return (
     <form onSubmit={handleSubmit}>
