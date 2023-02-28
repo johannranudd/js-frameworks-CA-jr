@@ -6,7 +6,7 @@ import MenuIcon from "./MenuIcon";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 
-export default function TestBar() {
+export default function Navbar() {
   return (
     <>
       <header className="relative z-50 border-b border-black bg-white dark:border-white dark:bg-black">
