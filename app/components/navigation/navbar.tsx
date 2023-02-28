@@ -14,7 +14,6 @@ export default function NavBar() {
           <Link href={"/"}>
             <Image src={LogoImage} alt="logo" width={80} />
           </Link>
-
           <BtnColorMode />
           <MenuIcon />
           <DesktopMenu />
