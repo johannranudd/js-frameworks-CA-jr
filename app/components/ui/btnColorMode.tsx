@@ -18,7 +18,7 @@ const BtnColorMode = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
-    <div className="grid place-items-center border border-2 border-purple-600 p-2 w-10 h-10">
+    <div className="grid place-items-center m-auto border border-2 border-purple-600 p-2 w-10 h-10">
       {currentTheme === "dark" ? (
         <button
           onClick={() => setTheme("light")}

@@ -9,25 +9,25 @@ import React, {
   useReducer,
 } from "react";
 import { reducer, initialState } from "./reducer/cartReducer";
-import { TProduct, CartContextInterface } from "@/types/types";
+import { TProduct, ContextInterface } from "@/types/types";
 
-export const CartContext = createContext<CartContextInterface>({
+export const Context = createContext<ContextInterface>({
   cartState: {},
   dispatch: (): TProduct[] => [],
   menuIsOpen: false,
   setMenuIsOpen: () => false,
 });
 
-export function CartProvider({ children }: { children: React.ReactNode }) {
+export function ContextProvider({ children }: { children: React.ReactNode }) {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
   const [cartState, dispatch] = useReducer(reducer, initialState);
   return (
-    <CartContext.Provider
+    <Context.Provider
       value={{ cartState, dispatch, menuIsOpen, setMenuIsOpen }}
     >
       {children}
-    </CartContext.Provider>
+    </Context.Provider>
   );
 }
 
-export const useCartContext = () => useContext(CartContext);
+export const useGlobalContext = () => useContext(Context);

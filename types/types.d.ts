@@ -8,7 +8,7 @@ export interface IState {
   products: TProduct[];
 }
 
-export interface CartContextInterface {
+export interface ContextInterface {
   cartState: Object<IState>;
   dispatch: Dispatch<any>;
   menuIsOpen: boolean;

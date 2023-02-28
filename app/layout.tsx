@@ -1,8 +1,8 @@
 import "./globals.css";
 import Head from "./head";
 import ColorThemeProvider from "../context/colorThemeProvider";
-import { CartProvider } from "../context/cartContext";
-import NavBar from "./components/navigation/navbar";
+import { ContextProvider } from "../context/context";
+import NavBar from "./components/navigation/Navbar";
 
 export default function RootLayout({
   children,
@@ -13,12 +13,12 @@ export default function RootLayout({
     <html lang="en">
       <Head />
       <body>
-        <CartProvider>
+        <ContextProvider>
           <ColorThemeProvider>
             <NavBar />
             {children}
           </ColorThemeProvider>
-        </CartProvider>
+        </ContextProvider>
       </body>
     </html>
   );
