@@ -10,6 +10,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  //  children = page.tsx
   return (
     <html lang="en">
       <Head />

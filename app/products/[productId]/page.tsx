@@ -19,3 +19,5 @@ export default async function ProductDetailPage({
     </div>
   );
 }
+
+// todo: generateStaticParams to prefetch all potential Ids
