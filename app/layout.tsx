@@ -2,7 +2,7 @@ import "./globals.css";
 import Head from "./head";
 import ColorThemeProvider from "../context/colorThemeProvider";
 import { ContextProvider } from "../context/context";
-import Navbar from "./components/navigation/Navbar";
+import TestBar from "./components/navigation/TestBar";
 
 export default function RootLayout({
   children,
@@ -15,7 +15,7 @@ export default function RootLayout({
       <body>
         <ContextProvider>
           <ColorThemeProvider>
-            <Navbar />
+            <TestBar />
             {children}
           </ColorThemeProvider>
         </ContextProvider>
