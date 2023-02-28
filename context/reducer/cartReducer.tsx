@@ -1,9 +1,5 @@
 import React from "react";
-import { TProduct } from "@/types/types";
-
-interface IState {
-  products: TProduct[];
-}
+import { TProduct, IState } from "@/types/types";
 
 export const initialState: IState = {
   products: [],

@@ -4,7 +4,13 @@ export type TProduct = {
   price: number;
 };
 
+export interface IState {
+  products: TProduct[];
+}
+
 export interface CartContextInterface {
-  state: Object;
+  cartState: Object<IState>;
   dispatch: Dispatch<any>;
+  menuIsOpen: boolean;
+  setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
 }

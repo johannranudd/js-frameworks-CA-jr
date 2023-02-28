@@ -12,14 +12,19 @@ import { reducer, initialState } from "./reducer/cartReducer";
 import { TProduct, CartContextInterface } from "@/types/types";
 
 export const CartContext = createContext<CartContextInterface>({
-  state: {},
+  cartState: {},
   dispatch: (): TProduct[] => [],
+  menuIsOpen: false,
+  setMenuIsOpen: () => false,
 });
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+  const [cartState, dispatch] = useReducer(reducer, initialState);
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider
+      value={{ cartState, dispatch, menuIsOpen, setMenuIsOpen }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -21,5 +21,7 @@ add to globals.css and restart vscode
 ```
 
 create color theme:
+
 `npm i next-themes`
 `npm i react-icons`
+`npm install react-icons --save`
