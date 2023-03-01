@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function ListOfProducts() {
   const data = use(getData());
-  // console.log(data);
+  console.log(data);
   return (
     <ul>
-      <Suspense fallback={<h2>Loading...</h2>}>
+      {/* <Suspense fallback={<h2>Loading...</h2>}>
         {data?.map((item: IDataObject) => {
-          console.log(item);
+          // console.log(item);
           const { id, title, imageUrl } = item;
           return (
             <li key={id}>
@@ -21,14 +21,12 @@ export default function ListOfProducts() {
                   alt={`image of ${title}`}
                   fill={true}
                   className="object-cover"
-                  // width={150}
-                  // height={150}
                 />
               </div>
             </li>
           );
         })}
-      </Suspense>
+      </Suspense> */}
     </ul>
   );
 }
