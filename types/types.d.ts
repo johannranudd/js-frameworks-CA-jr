@@ -15,9 +15,16 @@ export interface ContextInterface {
   menuIsOpen: boolean;
   setMenuIsOpen: Dispatch<SetStateAction<boolean>>;
 }
-// end context
+// END context
 
-// for fetching data from https://api.noroff.dev/api/v1/online-shop
+// response object for fetching data from https://api.noroff.dev/api/v1/online-shop
+interface IReviews {
+  id: string;
+  username: string;
+  rating: number;
+  description: string;
+}
+
 interface IDataObject {
   id: string;
   title: string;
@@ -27,5 +34,6 @@ interface IDataObject {
   imageUrl: string;
   rating: number;
   tags: Array<string>;
-  reviews: Array<string>;
+  reviews: Array<IReviews>;
 }
+// END response object for fetching data from https://api.noroff.dev/api/v1/online-shop

@@ -21,7 +21,7 @@ export default function MobileMenu() {
 
   return (
     <div
-      className={`absolute w-screen flex flex-col bg-red-500 duration-300 ${
+      className={`absolute w-screen z-40 flex flex-col bg-red-500 duration-300 ${
         menuIsOpen ? "top-16" : "-top-16"
       }`}
     >
